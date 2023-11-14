@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="icon" href="../media.project/Unsub.png">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        input[type=text], input[type=password] {
+            width: 100%;
+            padding: 20px;
+            margin: 20px 0px 20px 0px;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            border-radius: 20px;
+        }
+    </style>
+    <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                var loadingOverlay = document.getElementById('loading-overlay');
+                var mainContent = document.getElementById('main-content');
+
+                loadingOverlay.style.display = 'none'; 
+                mainContent.style.display = 'block';
+
+                showLoader();
+                    setTimeout(function () {
+                    hideLoader();
+                    }, 10000);
+            }
+        );
+
+            function Login() {
+                var done = 0;
+                var username = document.login.username.value;
+                var password = document.login.password.value;
+
+                if (username == "Fazli123" && password == "Fazli123"){
+                    if(confirm("Apakah anda ingin login?")){
+                        window.location.href = "../index.html";
+                    } else {
+                        alert("Membatalkan login !");
+                    }
+                } else{
+                    if(done==0){
+                        alert("Username/password Salah!");
+                    }
+                }
+            }
+    </script>
+</head>
+<body class="login">
+    <div id="loading-overlay">
+        <div id="loading-message">
+            <img src="../media.project/pngtree-loading-icon-vector-transparent-png-image_5687537.png" alt="" srcset="" class="img-loading">
+            <h4>Loading...</h5>
+        </div>
+    </div>
+    <center>
+    <div class="warp">
+        <div class="bg-login">
+        <h1>Login</h1>
+        <form name="login">
+            <input type="text" placeholder="User Name" id="username" name="username">
+        <br>
+            <input type="password" placeholder="Password" id="password" name="password">
+            <label><input type="checkbox">Remember Password</label> 
+        <br> 
+            <input type="button" value="LOGIN" onclick="Login()">
+            <a href="../Index.html">KEMBALI</a><br>
+            </form>
+            <p>Create a New Account <a href="">Sing Up</a></p>
+        </div>
+            </div>
+                <footer class="footer-login">
+                    <div class="link">
+                        <a href="https://www.instagram.com/makkanbang_/">
+                            <i class="fas fa-instagram"></i> Instagram
+                        </a>
+                        <a href="https://github.com/FazliXZ9">
+                            <i class="fal fa-envelope"></i> GitHub
+                        </a>
+                        <a href="www.facebook.com">
+                            <i class="fab fa-facebook"></i> Facebook
+                        </a>
+                    </div>
+                    <h4>&copy; Muhammad Fazli | 2023</h4>
+            </footer>
+        </center>
+    </body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beranda</title>
+    <link rel="icon" href="#" sizes="">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body{
+            background-color: aliceblue;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var loadingOverlay = document.getElementById('loading-overlay');
+            var mainContent = document.getElementById('main-content');
+
+            loadingOverlay.style.display = 'none'; 
+            mainContent.style.display = 'block'; 
+
+            showLoader();
+                    setTimeout(function () {
+                    hideLoader();
+                    }, 10000);
+        });
+    </script>
+</head>
+<body>
+    <div id="loading-overlay">
+        <div id="loading-message">
+            <img src="media.project/pngtree-loading-icon-vector-transparent-png-image_5687537.png" alt="" srcset="" class="img-loading">
+            <h4>Loading...</h4>
+        </div>
+    </div>
+    <div id="main-content">
+        <nav class="navbar">
+            <img src="media.project/Unsub.png" alt="" srcset="" class="img-nav">
+            <a href="" class="button button-primary show">Profile</a>
+            <a href="view/v_contac.html" class="button button-primary show">Contac Us</a>
+            <a href="view/v_login.html" class="button button-primary show">Login</a>
+            <a href="view/v_media.html" class="button button-primary show">News</a>
+        </nav>
+    </div>
+        <div class="content">
+            <P>Isi Konten</P>
+        </div>
+            <div class="footer-index">
+            <footer>
+                <h4>&copy; Muhammad Fazli | 2023</h4>
+            </footer>
+        </div>
+    </body>
+</html>

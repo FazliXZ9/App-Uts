@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+            input[type=text] { 
+                border-radius: none;
+            }
+
+            input {
+                width: 100%;
+                padding: 10px;
+                border: 1px solid #ced4da;
+                border-radius: 5px;
+                background-color: #f8f9fa;
+                color: #495057;
+            }
+
+            textarea {
+                width: 90%;
+                padding: 30px;
+                border: 1px solid #ced4da;
+                border-radius: 5px;
+                background-color: #f8f9fa;
+                color: #495057;
+
+            }
+
+            form {
+                max-width: 600px;
+            }
+
+            .colum-name,
+            .colum-email,
+            .colum-massage {
+                margin-bottom: 20px;
+            }
+
+            label {
+                display: block;
+                font-weight: bold;
+                margin-bottom: 5px;
+                color: none;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+
+            .colum-name{
+                border-radius: 10px;
+                margin: none;
+            }
+    </style>
+    <script>
+        function sendEmail(){
+            Email.send({
+                Host : "muhammadfazli@gmail.com",
+                Username : "Muhammadfazli@gmail.com",
+                Password : "fazli123",
+                To : 'muhammadfazli@gmail.com',
+                Form : document.getElementById("email").value,
+                Subject : "New Content Form Enquiry",
+                Body : "Name" + document.getElementById("name").value
+                + "<br> Email: " + documet.getElementById("email").value
+                + "<br> Message: " + documet.getElementById("message").value
+            }).then(
+                messgae => alert ("Message Sent Successfully")
+            );
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            var loadingOverlay = document.getElementById('loading-overlay');
+            var mainContent = document.getElementById('main-content');
+
+            loadingOverlay.style.display = 'none'; 
+            mainContent.style.display = 'block'; 
+
+            showLoader();
+                    setTimeout(function () {
+                    hideLoader();
+                    }, 10000);
+                }
+            );
+    </script>
+</head>
+<body>
+    <div id="loading-overlay">
+        <div id="loading-message">
+            <img src="../media.project/pngtree-loading-icon-vector-transparent-png-image_5687537.png" alt="" srcset="" class="img-loading">
+            <h4>Loading...</h4>
+        </div>
+    </div>
+    <div class="warp-contact">
+        <div class="table-body">
+            <div class="colum-g">
+                <h2><i class="fal fa-pencil"></i>Send a Massage</h2>
+            </div>
+            <form class="contact" onsubmit="sendEmail(); reset(); return false;">
+                <div class="colum-name">
+                <label>Your Name
+                <input type="text"></label>
+            </div>
+                <div class="colum-email">
+                <label>Email 
+                <input type="email"></label>
+                <small>Shere your email</small>
+            </div>
+                <div class="colum-massage">
+                <label>Message
+                <textarea class="form-control"></textarea></label>
+            </div>
+            <center>								  
+                <input type="button" value="SUBMIT" class="btn btn-primary btn-sm">
+                <a href="../index.html">KEMBALI</a>
+            </center>	
+            </form>
+        </div>
+    </div>
+        <footer class="footer-login">
+            <div class="link">
+                <a href="https://www.instagram.com/makkanbang_/">
+                    <i class="fas fa-instagram"></i> Instagram
+                </a>
+                <a href="https://github.com/FazliXZ9">
+                    <i class="fal fa-envelope"></i> GitHub
+                </a>
+                <a href="www.facebook.com">
+                    <i class="fab fa-facebook"></i> Facebook
+                </a>
+            </div>
+            <h4>&copy; Muhammad Fazli | 2023</h4>
+        </footer>								
+    </body>               
+</html>
